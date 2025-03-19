@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "NMS-Timesheet",
+  "version": "1.0",
+  "description": "Punch in and out of your timesheet",
+  "permissions": ["storage"],
+  "host_permissions": [
+    "http://localhost:4001/api/*",
+    "https://app.nms-timesheet.com/api/*"
+  ],
+  "action": {
+    "default_popup": "index.html",
+    "default_icon": {
+      "16": "icon.png",
+      "48": "icon.png",
+      "128": "icon.png"
+    }
+  }
+}
