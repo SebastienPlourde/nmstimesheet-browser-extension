@@ -12,6 +12,7 @@
                 border-bottom-right-radius: 35px;
                 border-bottom-right-radius: 35px;
                 }
+         
         h1    { font-size: 16px; 
                 font-weight: 700; 
                 color: rgb(9,9,11);
@@ -49,6 +50,23 @@
                         font-size: 14px;
                         cursor: pointer;
                }
+
+        body.dark { 
+                background-color: rgb(32, 33, 36);
+            }
+        body.dark h1,
+        body.dark label,
+        body.dark a {
+            color: #fff;
+        }
+
+        body.dark input {
+            background-color: rgb(32, 33, 36);
+            border-color: rgb(95, 99, 104);
+            color: #fff;
+        }
+
+
         #logo { display: block; 
                 margin: 0 auto;
                 width: 145px;
@@ -71,6 +89,29 @@
                     margin-top: 35px;
                   }
         #punchout-form, #punchUpdatekeyForm, punchin-form { display: none; }
+
+        body.dark button {
+            background-color: rgb(95, 99, 104);
+            color: #fff;
+        }
+
+        body.dark #punchout { 
+            background-color: #f00;
+        }
+
+        body.dark #punchin { 
+            background-color: rgb(34,197,94);
+        }
+
+        body.dark #updateKey { 
+            background-color: rgb(95, 99, 104);
+        }
+
+        /* Light/Dark mode SVG logo */
+        body.dark #logo {
+            color: #fff;
+        }
+
     </style>
 </head>
 <body>

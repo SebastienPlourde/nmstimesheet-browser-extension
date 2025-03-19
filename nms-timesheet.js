@@ -1,5 +1,20 @@
 document.addEventListener("DOMContentLoaded", function () {
 
+    // Check system dark mode preference
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+    // Listen for system dark mode changes
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+        if (event.matches) {
+            document.body.classList.add('dark');
+        } else {
+            document.body.classList.remove('dark');
+        }
+    });
+
+
     const punchInForm = document.getElementById("punchin-form");
     const punchOutForm = document.getElementById("punchout-form");
     const punchUpdatekeyForm = document.getElementById("punchUpdatekeyForm");
@@ -20,17 +35,6 @@ document.addEventListener("DOMContentLoaded", function () {
     punchInForm.style.display = "none";
     punchOutForm.style.display = "none";
     punchUpdatekeyForm.style.display = "none";
-
-
-    // Check storage for punch-in state
-    /*
-    chrome.storage.sync.get(["punchedIn"], function (data) {
-        if (data.punchedIn) {
-            punchInForm.style.display = "none";
-            punchOutForm.style.display = "block";
-        }
-    });
-    */
 
     chrome.storage.sync.get(['key'], function(result) {
         if (!result.key) {
