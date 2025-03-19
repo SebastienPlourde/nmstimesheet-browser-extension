@@ -1,9 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    punchInForm.style.display = "none";
-    punchOutForm.style.display = "none";
-    punchUpdatekeyForm.style.display = "none";
-
     const punchInForm = document.getElementById("punchin-form");
     const punchOutForm = document.getElementById("punchout-form");
     const punchUpdatekeyForm = document.getElementById("punchUpdatekeyForm");
@@ -18,8 +14,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const punchInButton = document.getElementById("punchin");
     const punchOutButton = document.getElementById("punchout");
 
-    //const URL = "https://app.nms-timesheet.com";
-    const URL = "http://localhost:4001";
+    const URL = "https://app.nms-timesheet.com";
+    //const URL = "http://localhost:4001";
 
     punchInForm.style.display = "none";
     punchOutForm.style.display = "none";
@@ -90,7 +86,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 punchOutForm.style.display = "none";
                 punchUpdatekeyForm.style.display = "none";
             });
-    }
     });
 
 
@@ -117,8 +112,15 @@ document.addEventListener("DOMContentLoaded", function () {
                 punchInForm.style.display = "none";
                 punchOutForm.style.display = "block";
             } else {
-                alert("Punch In failed. Please check project and task.");
+                // Parse the error response and show the specific message
+                response.json().then(data => {
+                    alert(data.message || "Punch In failed. Please check project and task.");
+                }).catch(() => {
+                    alert("Punch In failed. Please check project and task.");
+                });
             }
+        }).catch(error => {
+            alert(`Network error: ${error.message}`);
         });
     });
 
