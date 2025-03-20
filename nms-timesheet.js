@@ -14,7 +14,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-
     const punchInForm = document.getElementById("punchin-form");
     const punchOutForm = document.getElementById("punchout-form");
     const punchUpdatekeyForm = document.getElementById("punchUpdatekeyForm");
@@ -36,18 +35,18 @@ document.addEventListener("DOMContentLoaded", function () {
     punchOutForm.style.display = "none";
     punchUpdatekeyForm.style.display = "none";
 
+
+    // Run on page load
+
     chrome.storage.sync.get(['key'], function(result) {
         if (!result.key) {
-            // No key in storage, show update key form
             punchUpdatekeyForm.style.display = "block";
             return;
         }
 
-        // Key exists, set it in inputs and test it
         document.querySelectorAll('#key').forEach(input => {
             input.value = result.key;
         });
-
 
         fetch(`${URL}/api/punchstatus`, {
             method: "GET",
@@ -65,19 +64,16 @@ document.addEventListener("DOMContentLoaded", function () {
                     punchUpdatekeyForm.style.display = "block";
 
                 } else if (data.status === "error" && data.message === "Invalid authorization header") {
-                    console.log("Punched out");
                     punchOutForm.style.display = "none";
                     punchInForm.style.display = "none";
                     punchUpdatekeyForm.style.display = "block";
 
                 } else if (data.punch_status === "OUT") {
-                    console.log("Punched out");
                     punchOutForm.style.display = "none";
                     punchInForm.style.display = "block";
                     punchUpdatekeyForm.style.display = "none";
 
                 } else {
-                    console.log("Punched in");
                     punchInForm.style.display = "none";
                     punchOutForm.style.display = "block";
                     punchUpdatekeyForm.style.display = "none";
@@ -91,7 +87,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 punchUpdatekeyForm.style.display = "none";
             });
     });
-
 
     punchInButton.addEventListener("click", function () {
         const project = projectInput.value;
