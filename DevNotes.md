@@ -1,11 +1,11 @@
 ### Todo
 
- - [ ] Add instruction on how and where to get the key
+ - [x] Add instruction on how and where to get the key
  - [ ] Better support for error message. To display in a div instead of alert
 	- [ ] Each error can have its own div
- - [ ] Add language support
-  - [ ] Detect language from browser and set the language
-  - [ ] Add language selection
+ - [x] Add language support
+  - [x] Detect language from browser and set the language
+  - [x] Add language selection
  - [x] Add support for dark mode
 
 From NMS-Timesheet
