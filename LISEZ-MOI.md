@@ -14,7 +14,7 @@ NMS-Timesheet est un outil puissant pour suivre le temps passé sur vos projets.
 2. Rendez-vous sur la page des détails du projet.
 3. Trouvez votre clé dans la section 'Webhooks'. Notez que cette clé est régénérée à chaque reconnexion.
 
-> **Important** : Vous devez avoir un compte sur app.nms-timesheet.com pour utiliser cette extension. Si ce n'est pas encore fait, créez-en un dès maintenant !
+> **Important** : Vous devez avoir un compte sur https://app.nms-timesheet.com pour utiliser cette extension. Si ce n'est pas encore fait, créez-en un dès maintenant !
 
 ## Aperçu de l'extension
 ### Pointage d'entrée
