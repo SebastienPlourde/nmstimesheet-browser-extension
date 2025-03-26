@@ -18,6 +18,8 @@ To use this extension, you need to have a session key.
 
 Important: This extention require the user to have an account on app.nms-timesheet.com. If you don't have an account, please create one before using this extension.
 
+
+
 ## Punch in
 ![Punch IN](./Punch%20IN.png)
 
