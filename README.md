@@ -16,7 +16,7 @@ To use this extension, you need to have a session key.
  - If you need to update your session key, enter the new key and click 'SAVE KEY'.
  - If you have any questions or need help, please contact
 
-Important: This extention require the user to have an account on app.nms-timesheet.com. If you don't have an account, please create one before using this extension.
+Important: This extention require the user to have an account to connect with https://app.nms-timesheet.com. If you don't have an account, please create one before using this extension. Go to https://nmstimesheet.com and fill the form.
 
 
 
