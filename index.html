@@ -41,16 +41,32 @@
                 color: rgb(9,9,11);
               }
 
+        select { display: block; 
+                    width: 244px;
+                    border-radius: 6px;
+                    border: 1px solid #ccc;
+                    margin-top: 8px; 
+                    margin-bottom: 14px;
+                    padding-top: 14px; 
+                    padding-bottom: 14px; 
+                    padding-left: 10px;
+                    font-size: 14px; 
+                    font-weight: 400;
+                    cursor: pointer;
+                    background-color: #fff;
+               }
+      
+
         button { display: block; 
-                        margin: 5px 0; 
-                        width: 100%; 
-                        border-radius: 35px;
-                        border: none;
-                        padding: 14px;
-                        font-weight: bolder;
-                        box-shadow: rgba(0, 0, 0, 0.35) 0px 1px 3px;
-                        font-size: 14px;
-                        cursor: pointer;
+                    margin: 5px 0; 
+                    width: 100%; 
+                    border-radius: 35px;
+                    border: none;
+                    padding: 14px;
+                    font-weight: bolder;
+                    box-shadow: rgba(0, 0, 0, 0.35) 0px 1px 3px;
+                    font-size: 14px;
+                    cursor: pointer;
                }
 
         body.dark { 
@@ -68,6 +84,11 @@
             color: #fff;
         }
 
+        body.dark select {
+            background-color: rgb(32, 33, 36);
+            border-color: rgb(95, 99, 104);
+            color: #fff;
+        }
 
         #logo { display: block; 
                 margin: 0 auto;
@@ -160,8 +181,12 @@
 
     <div id="punchin-form" >
         <input type="hidden" id="key" placeholder="Session Key" value="" data-storage-key="key">
-        <label for="project">Project number</label>
-        <input type="text" id="project" placeholder="Project Number">
+
+        <label for="project">Project</label>
+        <select id="project" name="project">
+            <option value=""></option>
+        </select>
+
         <label for="task">Task</label>
         <input type="text" id="task" placeholder="Task">
         <button id="punchin">PUNCH IN</button>

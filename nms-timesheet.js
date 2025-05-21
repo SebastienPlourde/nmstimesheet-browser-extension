@@ -69,6 +69,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     punchUpdatekeyForm.style.display = "block";
 
                 } else if (data.punch_status === "OUT") {
+                    getAssignedProjects();
                     punchOutForm.style.display = "none";
                     punchInForm.style.display = "block";
                     punchUpdatekeyForm.style.display = "none";
@@ -134,6 +135,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }).then(response => {
             if (response.ok) {
                 chrome.storage.local.set({ punchedIn: false });
+                getAssignedProjects();
                 punchInForm.style.display = "block";
                 punchOutForm.style.display = "none";
             } else {
@@ -160,6 +162,34 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-
-
+    function getAssignedProjects () {
+        const key = keyInput.value;
+        fetch(`${URL}/api/assigned_projects`, {
+            method: "GET",
+            headers: {
+                "Authorization": `Bearer ${key}`,
+                "Content-Type": "application/json"
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.status === "success") {
+                const projectSelect = document.getElementById('project');
+                // Clear existing options except the first one
+                projectSelect.innerHTML = '';
+                
+                // Add new options
+                data.projects.forEach(project => {
+                    const option = document.createElement('option');
+                    option.value = project.project;
+                    option.textContent = `${project.project} - ${project.name}`;
+                    projectSelect.appendChild(option);
+                });
+            }
+        })
+        .catch(error => {
+            console.error('Error fetching projects:', error);
+        });
+    }
 });
+
