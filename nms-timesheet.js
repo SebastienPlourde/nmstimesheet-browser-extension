@@ -28,8 +28,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const punchInButton = document.getElementById("punchin");
     const punchOutButton = document.getElementById("punchout");
 
-    //const URL = "https://app.nms-timesheet.com";
-    const URL = "http://localhost:4001";
+    const URL = "https://app.nms-timesheet.com";
+    //const URL = "http://localhost:4001";
 
     punchInForm.style.display = "none";
     punchOutForm.style.display = "none";
