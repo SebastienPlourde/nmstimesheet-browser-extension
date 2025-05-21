@@ -21,7 +21,7 @@ Important: This extention require the user to have an account on app.nms-timeshe
 document.addEventListener("DOMContentLoaded", function () {
     const languages = {
         en: {
-            project_label: "Project number",
+            project_label: "Project",
             task_label: "Task",
             session_key_label: "Session Key",
             save_key_button: "SAVE KEY",
@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
 			find_the_key: "Please login to app.nms-timesheet.com The key is located in project details, under the 'Webhooks' section. The key is regenerated every time you relogin"
        },
         fr: {
-            project_label: "Numéro de projet",
+            project_label: "Projet",
             task_label: "Tâche",
             session_key_label: "Clé de session",
             save_key_button: "SAUVEGARDER",
