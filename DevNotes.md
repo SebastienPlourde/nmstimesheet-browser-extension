@@ -9,7 +9,7 @@
  - [x] Add support for dark mode
 
 From NMS-Timesheet
- - [ ] Add an API to get the list of projects available for this user
- - [ ] Build a select menu to select the project
+ - [x] Add an API to get the list of projects available for this user
+ - [x] Build a select menu to select the project
 
 ### Done
